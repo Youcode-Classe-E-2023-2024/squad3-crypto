@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/market', function () {
+    return view('homePages.market');
+});
+Route::get('/crypto', function () {
+    return view('homePages.assets');
+});
+Route::get('/exchange', function () {
+    return view('homePages.exchanges');
+});
+Route::get('/cryptoDetails', function () {
+    return view('homePages.cryptoDetails');
 });
