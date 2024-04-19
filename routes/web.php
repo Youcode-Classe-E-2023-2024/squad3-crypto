@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExchangeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,7 @@ Route::get('/market', function () {
 Route::get('/crypto', function () {
     return view('homePages.assets');
 });
-Route::get('/exchange', function () {
-    return view('homePages.exchanges');
-});
+Route::get('/exchange', [ExchangeController::class, 'index']);
 Route::get('/cryptoDetails', function () {
     return view('homePages.cryptoDetails');
 });
