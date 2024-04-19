@@ -12,488 +12,67 @@
             <div class="row">
                 <div class="col-xl-12">
                     <!-- Row -->
-                    <div class="row">
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/btc1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Bitcoin</h4>
+                    <section class="row">
+                        @php
+                            $arr = [
+                                'bitcoin-1',
+                                'btc',
+                                'btc1',
+                                'check',
+                                'dash',
+                                'dash-pink',
+                                'eth',
+                                'eth2',
+                                'ethereum-1' ,
+                                'lit3',
+                                'litecoin-1',
+                                'ltc',
+                                'monero',
+                                'ripple-1',
+                            ];
+                            function getRandomName($arr) {
+                                $randomIndex = array_rand($arr);
+                                return $arr[$randomIndex];
+                            }
+                        @endphp
+                        @foreach($cryptos as $crypto)
+                            <!-- column -->
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                <div class="card pull-up">
+                                    <div class="card-body align-items-center flex-wrap">
+                                        <div class="d-flex align-items-center mb-4">
+                                            <a href="/cryptoDetails" class="ico-icon">
+                                                <img src="assets/images/svg/{{getRandomName($arr)}}.svg" alt="">
                                             </a>
-                                            <span>Finance</span>
+{{--                                            <div style="height: 30px; width: 30px; background-color:yellow; border-radius: 9999px; font-weight: bold; font-size: 16px; color: white; display: flex; justify-content: center; align-items: center">{{ substr($crypto['name'], 0, 1) }}</div>--}}
+                                            <form method="POST" action="{{ route('crypto_details') }}" class="ms-3">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $crypto['id'] }}">
+                                                <button type="submit" style="border: none; background: transparent">
+                                                    <h4 class="card-title mb-0">{{ $crypto['name'] }}</h4>
+                                                </button>
+                                                <span>Finance</span>
+                                            </form>
                                         </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/90</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">50%</P>
-                                            <span class="fs-12">Ended 12 Oct</span>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <p class="mb-0 fs-14 text-dark font-w600">{{ substr($crypto['priceUsd'], 0, 10) }}</p>
+                                                <span class="fs-12">priceUsd</span>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0 fs-14 text-success font-w600">{{ substr($crypto['changePercent24Hr'], 0, 10) }}</p>
+                                                <span class="fs-12">changePercent24Hr</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- /column -->
+                            <!-- /column -->
+                        @endforeach
 
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/ethereum-1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Litecoin</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100.00</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
 
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/lit3.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Etherium</h4>
-                                            </a>
-                                            <span>Construction</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$30/100.00</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">50%</P>
-                                            <span class="fs-12">Ended 25 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
 
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/monero.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Monero</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100.00</P>
-                                            <span class="fs-12">Not Rated</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 16 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/ripple-1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Cardano</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/82</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">20%</P>
-                                            <span class="fs-12">15 Day Left</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/eth2.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Ardor</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100.00</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">9 Day Left</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-
-                                            <img src="assets/images/svg/lit3.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">OmiGO</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$85/90</P>
-                                            <span class="fs-12">Not Rated</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">70%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/monero.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Tether</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100.00</P>
-                                            <span class="fs-12">Not Rated</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 25 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/ripple-1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Komodo</h4>
-                                            </a>
-                                            <span>Devolopment</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100.00</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 23 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/ethereum-1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Arc</h4>
-                                            </a>
-                                            <span>Technology</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$82/100</P>
-                                            <span class="fs-12">Not Rated</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">70%</P>
-                                            <span class="fs-12">Ended 27 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/btc1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Quantom</h4>
-                                            </a>
-                                            <span>Future</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$75/100</P>
-                                            <span class="fs-12">Science</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 25 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/dash-pink.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Nem</h4>
-                                            </a>
-                                            <span>Infrastructure</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100.00</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/ethereum-1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Augur</h4>
-                                            </a>
-                                            <span>Manufacturing</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$90/100</P>
-                                            <span class="fs-12">Not Rated</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">85%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/litecoin-1.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Atoms</h4>
-                                            </a>
-                                            <span>Technology</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/monero.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Startis</h4>
-                                            </a>
-                                            <span>Trading</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$72/100</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">80%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-
-                        <!-- column -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="card pull-up">
-                                <div class="card-body align-items-center flex-wrap">
-                                    <div class="d-flex align-items-center mb-4">
-                                        <a href="/cryptoDetails" class="ico-icon">
-                                            <img src="assets/images/svg/ltc.svg" alt="">
-                                        </a>
-                                        <div class="ms-3">
-                                            <a href="/cryptoDetails">
-                                                <h4 class="card-title mb-0">Sango</h4>
-                                            </a>
-                                            <span>Curruncy</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <p class="mb-0 fs-14 text-dark font-w600">$65/100</P>
-                                            <span class="fs-12">Neutral</span>
-                                        </div>
-                                        <div>
-                                            <p class="mb-0 fs-14 text-success font-w600">99%</P>
-                                            <span class="fs-12">Ended 20 Oct</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /column -->
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
