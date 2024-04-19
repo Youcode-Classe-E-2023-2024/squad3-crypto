@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ExchangeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CryptoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/market', function () {
     return view('homePages.market');
 });
-Route::get('/crypto', function () {
-    return view('homePages.assets');
-});
+
+Route::get('/crypto', [CryptoController::class, 'index']);
+
+Route::post('/cryptoDetails', [CryptoController::class, 'crypto_details'])->name('crypto_details');
+
 Route::get('/exchange', [ExchangeController::class, 'index']);
-Route::get('/cryptoDetails', function () {
-    return view('homePages.cryptoDetails');
-});
+
+
