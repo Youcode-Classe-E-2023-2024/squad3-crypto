@@ -20,7 +20,13 @@ Route::get('/market', function () {
 Route::get('/crypto', function () {
     return view('homePages.assets');
 });
+
+// Exchanges Index
 Route::get('/exchange', [ExchangeController::class, 'index']);
+
+// Exchange Detail
+Route::get('/exchange/{slug}', [ExchangeController::class, 'show']);
+
 Route::get('/cryptoDetails', function () {
     return view('homePages.cryptoDetails');
 });
