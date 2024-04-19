@@ -25,4 +25,5 @@ Route::post('/cryptoDetails', [CryptoController::class, 'crypto_details'])->name
 
 Route::get('/exchange', [ExchangeController::class, 'index']);
 
+Route::get('/exchangeDetails', [ExchangeController::class, 'exchangeDetails']);
 
