@@ -48,15 +48,15 @@ let dataSet = [
            $(row).addClass('selected')
         } ,
 		searching: false,
-		lengthChange:false ,        
+		lengthChange:false ,
 		language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
     });
-      
+
     table.on('click', 'tbody tr', function() {
     var $row = table.row(this).nodes().to$();
     var hasClass = $row.hasClass('selected');
@@ -66,17 +66,17 @@ let dataSet = [
         $row.addClass('selected')
     }
     })
-    
+
     table.rows().every(function() {
     this.nodes().to$().removeClass('selected')
     });
-	
+
     var table = $('#responsiveTable').DataTable( {
         responsive: true,
 		language: {
 			paginate: {
 				next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		}
     });
@@ -102,201 +102,201 @@ let dataSet = [
             $row.addClass('selected')
         }
     })
-        
+
     table2.rows().every(function() {
         this.nodes().to$().removeClass('selected')
     });
-	
+
 	// dataTable1
 	var table = $('#dataTable1').DataTable({
 		searching: false,
 		paging:true,
-		select: false,         
+		select: false,
 		lengthChange:false ,
-		
+
 	});
 	// dataTable2
 	var table = $('#dataTable2').DataTable({
 		searching: false,
 		paging:true,
-		select: false,         
+		select: false,
 		lengthChange:false ,
-		
+
 	});
 	// dataTable3
 	var table = $('#dataTable3').DataTable({
 		searching: false,
 		paging:true,
-		select: false,         
+		select: false,
 		lengthChange:false ,
-		
+
 	});
 	// dataTable4
 	var table = $('#dataTable4').DataTable({
 		searching: false,
 		paging:true,
-		select: false,         
+		select: false,
 		lengthChange:false,
-		
+
 	});
-	
+
 	// dataTable5
 	var table = $('#example5').DataTable({
 		searching: false,
 		paging:true,
 		select: false,
-		info: true,         
+		info: true,
 		lengthChange:false ,
 		language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
 			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
-		  },	
-	}); 
-	
+		  },
+	});
+
 	// dataTable6
 		var table = $('#example6').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,         
+			info: false,
 			lengthChange:false ,
 			language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
-			
+
 		});
-		
+
 		// dataTable7
 		var table = $('#example7').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,         
+			info: false,
 			lengthChange:false ,
 			language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
-			
+
 		});
-		
+
 		// dataTable8
 		var table = $('#example8').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,         
+			info: false,
 			lengthChange:false ,
 			language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
-			
+
 		});
 		// dataTable9
 		var table = $('#example9').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,         
+			info: false,
 			lengthChange:false ,
 			language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
-			
+
 		});
 		// dataTable10
 		var table = $('#example10').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,         
+			info: false,
 			lengthChange:false ,
 			language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
-			
+
 		});
 	// orderTable
 		var table = $('#orderTable').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,         
+			info: false,
 			lengthChange:false ,
 			language: {
 				paginate: {
 				  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-				  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+				  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 				}
 			  }
-			
+
 		});
 		// orderTable
 		var table = $('#example-history, #example-history-1, #example-history-2, #example-history-3').DataTable({
-			
+
 			searching: false,
 			paging:true,
 			select: false,
-			
-			pageLength:8,       
-			
-			
+
+			pageLength:10,
+
+
 			language: {
 				paginate: {
 				  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-				  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+				  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 				}
 			  }
-			
+
 		});
-	
+
 		var table = $('#example-2').DataTable({
 			searching: false,
 			paging:true,
 			select: false,
-			info: false,  
-			pageLength:5,       
+			info: false,
+			pageLength:10,
 			lengthChange:false ,
 			language: {
 				paginate: {
 				  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-				  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+				  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 				}
 			  }
-			
+
 		});
-		
-		
-	
+
+
+
 	// table row
 	var table = $('#dataTable1, #dataTable2, #dataTable3, #dataTable4,  #example3, #example4 ').DataTable({
 		language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
 			}
 		  }
 	});
 	$('#example tbody').on('click', 'tr', function () {
 		var data = table.row( this ).data();
 	});
-   
-	
-	
+
+
+
 })(jQuery);
