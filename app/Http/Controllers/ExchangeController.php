@@ -15,4 +15,9 @@ class ExchangeController extends Controller
         $exchangesData = $exchanges['data'];
         return view('homePages.exchanges', compact('exchangesData'));
     }
+
+    function exchangeDetails() 
+    {
+        return view('homePages.exchangeDetails');
+    }
 }
