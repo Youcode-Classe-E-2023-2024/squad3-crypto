@@ -482,25 +482,7 @@
                                 <li class="nav-item my-1" role="presentation">
                                     <button class="nav-link active" id="pills-crypto-tab" data-bs-toggle="pill"
                                             data-bs-target="#pills-crypto" type="button" role="tab"
-                                            aria-controls="pills-crypto" aria-selected="true">All Cryptos
-                                    </button>
-                                </li>
-                                <li class="nav-item my-1" role="presentation">
-                                    <button class="nav-link" id="pills-spot-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-spot" type="button" role="tab"
-                                            aria-controls="pills-spot" aria-selected="false">Spot Markets
-                                    </button>
-                                </li>
-                                <li class="nav-item my-1" role="presentation">
-                                    <button class="nav-link" id="pills-future-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-future" type="button" role="tab"
-                                            aria-controls="pills-future" aria-selected="false">Future Markets
-                                    </button>
-                                </li>
-                                <li class="nav-item my-1" role="presentation">
-                                    <button class="nav-link me-0" id="pills-listing-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-listing" type="button" role="tab"
-                                            aria-controls="pills-listing" aria-selected="false">New Listing
+                                            aria-controls="pills-crypto" aria-selected="true">All Exchanges
                                     </button>
                                 </li>
                             </ul>
