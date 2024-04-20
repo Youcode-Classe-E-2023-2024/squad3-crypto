@@ -27,8 +27,8 @@ Route::post('/cryptoDetails', [CryptoController::class, 'crypto_details'])->name
 // Exchanges Index
 Route::get('/exchange', [ExchangeController::class, 'index']);
 
-// Exchange Detail
+// Exchange api
 Route::get('/exchange/{slug}', [ExchangeController::class, 'show']);
 
-
+// Returning Exchange view
 Route::get('/exchangeDetails', [ExchangeController::class, 'exchangeDetails']);
