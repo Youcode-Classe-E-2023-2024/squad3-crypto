@@ -16,11 +16,16 @@ class ExchangeController extends Controller
         return view('homePages.exchanges', compact('exchangesData'));
     }
 
-    function show($slug) {
+    function show($slug)
+    {
         $exchangeData = Http::get("https://api.coincap.io/v2/exchanges/$slug")->json();
         $exchange = $exchangeData['data'];
-        return view('homePages.exchangeDetails', compact('exchange'));
+        return response()->json($exchange);
     }
 
+    function exchangeDetails()
+    {
+        return view('homePages.exchangeDetails');
+    }
 
 }
