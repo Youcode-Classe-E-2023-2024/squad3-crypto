@@ -30,3 +30,5 @@ Route::get('/exchange', [ExchangeController::class, 'index']);
 // Exchange Detail
 Route::get('/exchange/{slug}', [ExchangeController::class, 'show']);
 
+
+Route::get('/exchangeDetails', [ExchangeController::class, 'exchangeDetails']);
