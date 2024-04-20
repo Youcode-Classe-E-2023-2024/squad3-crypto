@@ -510,7 +510,7 @@
                                                 <tr>
                                                     <td>{{$exchange['rank']}}</td>
                                                     <td>
-                                                        <div class="market-title d-flex align-items-center exchangeName" data-slug="{{$exchange['exchangeId']}}">
+                                                        <div class="market-title d-flex align-items-center exchangeName cursor-pointer" data-slug="{{$exchange['exchangeId']}}">
                                                             <div class="market-icon bg-warning">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="512pt"
                                                                      version="1.1" viewBox="0 0 512 512" width="512pt">
