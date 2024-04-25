@@ -3,6 +3,7 @@
 use App\Http\Controllers\ExchangeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CryptoController;
+use App\Http\Controllers\MarketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,7 @@ use App\Http\Controllers\CryptoController;
 |
 */
 
-Route::get('/market', function () {
-    return view('homePages.market');
-});
+Route::get('/market',[MarketController::class, 'index']);
 
 
 Route::get('/crypto', [CryptoController::class, 'index']);
