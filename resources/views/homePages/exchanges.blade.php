@@ -510,8 +510,7 @@
                                                 <tr>
                                                     <td>{{$exchange['rank']}}</td>
                                                     <td>
-                                                        <a class="market-title d-flex align-items-center"
-                                                           href="javascript:void(0)">
+                                                        <div class="market-title d-flex align-items-center exchangeName cursor-pointer" data-slug="{{$exchange['exchangeId']}}">
                                                             <div class="market-icon bg-warning">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" height="512pt"
                                                                      version="1.1" viewBox="0 0 512 512" width="512pt">
@@ -543,12 +542,12 @@
                                                             <h5 class="mb-0 ms-2">{{$exchange['name']}}</h5>
                                                             <span
                                                                 class="text-muted ms-2">{{$exchange['exchangeId']}}</span>
-                                                        </a>
+                                                        </div>
                                                     </td>
                                                     <td class="text-success">{{number_format($exchange['percentTotalVolume'], 2)}}</td>
                                                     <td>{{number_format($exchange['volumeUsd'], 2)}}</td>
                                                     <td>{{$exchange['tradingPairs']}}</td>
-                                                    <td>{{floor($exchange['updated'] / (60 * 60 * 24))}}</td>
+                                                    <td>{{floor($exchange['updated'] / (60 * 60 * 24))}} Days</td>
                                                     <td class="text-end"><a href="{{$exchange['exchangeUrl']}}"
                                                                             class="badge badge-sm badge-success">Trade</a>
                                                     </td>
@@ -566,4 +565,16 @@
             </div>
         </div>
     </div>
+    <script>
+         $('.exchangeName').on('click', function() {
+             console.log($(this).data('slug'))
+             let slug = $(this).data('slug')
+             localStorage.setItem('slug', slug)
+             window.location.href = '/exchangeDetails';
+         })
+
+/*            slug =
+            console.log(slug)*/
+
+    </script>
 @endsection
